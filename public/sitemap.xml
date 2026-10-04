@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- /prenota esclusa: è noindex e bloccata in robots.txt (decisione COLLAUDO approvata).
+     /conferma mai: contiene i dati di una prenotazione. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://miriamstyle.it/</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://miriamstyle.it/privacy-policy</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
+</urlset>

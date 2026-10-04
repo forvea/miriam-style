@@ -1,0 +1,141 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+/* MOTIVO: "inline" fa leggere alle utility direttamente var(--token).
+   Senza, le variabili omonime di @theme (--font-display: var(--font-display))
+   sarebbero autoreferenziali. Un valore vive in un posto solo: tokens.css. */
+@theme inline {
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--text);
+  --color-ink-muted: var(--text-muted);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-detail: var(--detail);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  --text-xs: var(--text-xs);
+  --text-sm: var(--text-sm);
+  --text-base: var(--text-base);
+  --text-lg: var(--text-lg);
+  --text-xl: var(--text-xl);
+  --text-2xl: var(--text-2xl);
+  --text-3xl: var(--text-3xl);
+  --text-4xl: var(--text-4xl);
+
+  /* p-4 = 4 × --space-1 = --space-4: la scala di Tailwind coincide con la nostra */
+  --spacing: var(--space-1);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-full: var(--radius-full);
+
+  --container-site: var(--container);
+  --container-prose: 40rem;
+
+  --ease-site: var(--ease);
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/fonts/fraunces-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/fonts/fraunces-italic-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/figtree-latin.woff2") format("woff2");
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--space-16) + var(--space-4));
+  }
+
+  body {
+    @apply bg-bg font-body text-base text-ink antialiased;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 {
+    @apply font-display text-ink;
+    line-height: 1.12;
+    font-variation-settings: "SOFT" 50;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent-dark);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-site;
+    padding-inline: var(--gutter);
+  }
+
+  .section-y {
+    @apply py-12 md:py-16;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-accent px-6 py-3
+      font-semibold text-accent-contrast transition-colors duration-150 ease-site
+      hover:bg-accent-dark focus-visible:outline-accent-dark active:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-accent-dark
+      bg-transparent px-6 py-3 font-semibold text-accent-dark transition-colors duration-150 ease-site
+      hover:bg-accent-light active:bg-accent-light disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .link-text {
+    @apply font-semibold text-accent-dark underline decoration-1 underline-offset-4 hover:decoration-2;
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold tracking-wide text-accent-dark uppercase;
+  }
+
+  /* La sagoma dello specchio a punta: definita una volta come clipPath SVG
+     in MirrorDefs, scala con l'elemento perché usa objectBoundingBox */
+  .shape-mirror {
+    clip-path: url(#forma-specchio);
+  }
+
+  .field-input {
+    @apply min-h-11 w-full rounded-sm border border-line-strong bg-bg px-3 py-2 text-base text-ink;
+  }
+}

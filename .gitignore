@@ -1,0 +1,9 @@
+node_modules
+dist
+.DS_Store
+# segreti e configurazioni locali: mai versionati
+.env.local
+.env.*.local
+.env.production
+tsconfig.tsbuildinfo
+dist-ssr

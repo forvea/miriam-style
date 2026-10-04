@@ -1,0 +1,148 @@
+{
+  "slug": "miriam-style-dev",
+  "name": "Miriam Style",
+  "siteUrl": "http://localhost:5173",
+  "ownerEmail": "lucaverriello03+miriam@gmail.com",
+  "timezone": "Europe/Rome",
+
+  "bookingRules": {
+    "minAdvanceHours": 1,
+    "minCancellationHours": 2,
+    "visibleDaysAhead": 365,
+    "staffChoiceEnabled": true,
+    "emailConfirmationEnabled": true,
+    "emailReminderEnabled": true,
+    "emailCancellationEnabled": true,
+    "emailOwnerNotificationEnabled": true
+  },
+
+  "businessHours": [
+    { "dayOfWeek": 0, "isOpen": false },
+    { "dayOfWeek": 1, "isOpen": false },
+    { "dayOfWeek": 2, "isOpen": true, "openTime": "09:00", "closeTime": "18:30" },
+    { "dayOfWeek": 3, "isOpen": true, "openTime": "09:00", "closeTime": "18:30" },
+    { "dayOfWeek": 4, "isOpen": true, "openTime": "09:00", "closeTime": "18:30" },
+    { "dayOfWeek": 5, "isOpen": true, "openTime": "09:00", "closeTime": "18:30" },
+    { "dayOfWeek": 6, "isOpen": true, "openTime": "09:00", "closeTime": "18:30" }
+  ],
+
+  "breaks": [],
+
+  "specialClosures": [
+    { "dateFrom": "2026-01-01", "dateTo": "2026-01-01", "reason": "Capodanno", "recurrence": "annual" },
+    { "dateFrom": "2026-01-06", "dateTo": "2026-01-06", "reason": "Epifania", "recurrence": "annual" },
+    { "dateFrom": "2026-04-25", "dateTo": "2026-04-25", "reason": "Festa della Liberazione", "recurrence": "annual" },
+    { "dateFrom": "2026-05-01", "dateTo": "2026-05-01", "reason": "Festa dei lavoratori", "recurrence": "annual" },
+    { "dateFrom": "2026-06-02", "dateTo": "2026-06-02", "reason": "Festa della Repubblica", "recurrence": "annual" },
+    { "dateFrom": "2026-08-15", "dateTo": "2026-08-15", "reason": "Ferragosto", "recurrence": "annual" },
+    { "dateFrom": "2026-11-01", "dateTo": "2026-11-01", "reason": "Ognissanti", "recurrence": "annual" },
+    { "dateFrom": "2026-12-08", "dateTo": "2026-12-08", "reason": "Immacolata", "recurrence": "annual" },
+    { "dateFrom": "2026-12-25", "dateTo": "2026-12-25", "reason": "Natale", "recurrence": "annual" },
+    { "dateFrom": "2026-12-26", "dateTo": "2026-12-26", "reason": "Santo Stefano", "recurrence": "annual" }
+  ],
+
+  "services": [
+    {
+      "localId": "taglio-donna",
+      "name": "Taglio donna",
+      "category": "Taglio",
+      "description": "Taglio su misura, con consulenza prima di iniziare",
+      "durationMinutes": 45,
+      "basePrice": 35.00,
+      "parallelSlots": 1,
+      "displayOrder": 1,
+      "bufferEnabled": false
+    },
+    {
+      "localId": "colore",
+      "name": "Colore",
+      "category": "Colore",
+      "description": "Colorazione completa, tempo di posa compreso",
+      "durationMinutes": 90,
+      "basePrice": 55.00,
+      "parallelSlots": 1,
+      "displayOrder": 2,
+      "bufferEnabled": true,
+      "bufferMinutes": 10,
+      "bufferPosition": "After"
+    },
+    {
+      "localId": "piega",
+      "name": "Piega",
+      "category": "Piega",
+      "description": "Asciugatura e piega",
+      "durationMinutes": 30,
+      "basePrice": 22.00,
+      "parallelSlots": 1,
+      "displayOrder": 3,
+      "bufferEnabled": false
+    }
+  ],
+
+  "staff": [
+    {
+      "localId": "miriam",
+      "name": "Miriam Dino",
+      "role": "Titolare, hair stylist",
+      "specialization": "Taglio e consulenza d'immagine",
+      "displayOrder": 1,
+      "businessHours": [
+        { "dayOfWeek": 0, "isAvailable": false },
+        { "dayOfWeek": 1, "isAvailable": false },
+        { "dayOfWeek": 2, "isAvailable": true, "startTime": "09:00", "endTime": "18:30" },
+        { "dayOfWeek": 3, "isAvailable": true, "startTime": "09:00", "endTime": "18:30" },
+        { "dayOfWeek": 4, "isAvailable": true, "startTime": "09:00", "endTime": "18:30" },
+        { "dayOfWeek": 5, "isAvailable": true, "startTime": "09:00", "endTime": "18:30" },
+        { "dayOfWeek": 6, "isAvailable": true, "startTime": "09:00", "endTime": "18:30" }
+      ],
+      "breaks": [],
+      "services": [
+        { "serviceLocalId": "taglio-donna", "priceOverride": null },
+        { "serviceLocalId": "colore", "priceOverride": null },
+        { "serviceLocalId": "piega", "priceOverride": null }
+      ]
+    },
+    {
+      "localId": "giulia",
+      "name": "Giulia",
+      "role": "Hair stylist",
+      "specialization": "Colore",
+      "displayOrder": 2,
+      "businessHours": [
+        { "dayOfWeek": 0, "isAvailable": false },
+        { "dayOfWeek": 1, "isAvailable": false },
+        { "dayOfWeek": 2, "isAvailable": true, "startTime": "09:00", "endTime": "18:30" },
+        { "dayOfWeek": 3, "isAvailable": true, "startTime": "09:00", "endTime": "18:30" },
+        { "dayOfWeek": 4, "isAvailable": true, "startTime": "09:00", "endTime": "18:30" },
+        { "dayOfWeek": 5, "isAvailable": true, "startTime": "09:00", "endTime": "18:30" },
+        { "dayOfWeek": 6, "isAvailable": true, "startTime": "09:00", "endTime": "18:30" }
+      ],
+      "breaks": [],
+      "services": [
+        { "serviceLocalId": "colore", "priceOverride": null },
+        { "serviceLocalId": "piega", "priceOverride": null }
+      ]
+    },
+    {
+      "localId": "sara",
+      "name": "Sara",
+      "role": "Hair stylist",
+      "specialization": "Piega e acconciature",
+      "displayOrder": 3,
+      "businessHours": [
+        { "dayOfWeek": 0, "isAvailable": false },
+        { "dayOfWeek": 1, "isAvailable": false },
+        { "dayOfWeek": 2, "isAvailable": true, "startTime": "09:00", "endTime": "18:30" },
+        { "dayOfWeek": 3, "isAvailable": true, "startTime": "09:00", "endTime": "18:30" },
+        { "dayOfWeek": 4, "isAvailable": true, "startTime": "09:00", "endTime": "18:30" },
+        { "dayOfWeek": 5, "isAvailable": true, "startTime": "09:00", "endTime": "18:30" },
+        { "dayOfWeek": 6, "isAvailable": true, "startTime": "09:00", "endTime": "18:30" }
+      ],
+      "breaks": [],
+      "services": [
+        { "serviceLocalId": "taglio-donna", "priceOverride": null },
+        { "serviceLocalId": "piega", "priceOverride": null }
+      ]
+    }
+  ]
+}

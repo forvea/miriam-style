@@ -1,0 +1,85 @@
+/*
+ * TOKEN — Miriam Style
+ * Generati il 2026-10-03 con il Sistema Forvea v1.0.1. CONGELATI: sola lettura.
+ * Ogni modifica successiva al sito li legge, non li ricalcola (SKILL §5).
+ *
+ * Direzione: marchio esistente NO → derivata dagli ingredienti reali del locale
+ * (scheda §6–§7): pareti in stucco ocra-oro, bianco e crema, cassettiere in
+ * legno wengé, luce naturale, specchi a punta. Rosso dell'insegna solo come
+ * dettaglio minimo, mai come colore d'azione.
+ *
+ * Contrasti verificati (WCAG 2.1):
+ *   --text su --bg 14.68 · su --surface 13.37 · su --surface-2 12.02
+ *   --text-muted su --bg 6.37 · su --surface 5.80 · su --surface-2 5.22
+ *   --accent-contrast su --accent 5.90 · su --accent-dark 8.53
+ *   --accent su --bg 5.57 · --accent-dark su --bg 8.05 · su --accent-light 5.96
+ *   --text su --accent-light 10.86 · --bg su --text (piè di pagina) 14.68
+ *   --border-strong su --bg 3.77 · su --surface 3.43 (bordi dei campi, ≥ 3:1)
+ *   --detail su --bg 6.67 · --error 6.69 · --success 6.03 · --warning 5.59
+ */
+
+:root {
+  /* Colore — accento: l'ocra della parete in stucco, scurito per reggere il testo bianco */
+  --accent: #8a5a1c;
+  --accent-light: #ebd5ae;
+  --accent-dark: #6b4413;
+  --accent-contrast: #ffffff;
+
+  /* Colore — superfici e testo */
+  --bg: #fbf8f2;
+  --surface: #f4ede1;
+  --surface-2: #ece1ce;
+  --text: #2e211b;
+  --text-muted: #6a584b;
+  --border: #d9cbb4;
+
+  /* Token aggiunti (design-system §2 consente di aggiungere, mai rinominare) */
+  --border-strong: #8f7c69; /* bordi dei campi: gli elementi di interfaccia chiedono 3:1 */
+  --detail: #a1302a;        /* il rosso dell'insegna: solo dettaglio, mai azione */
+
+  /* Stati di sistema */
+  --success: #2f6b3a;
+  --warning: #8a5a00;
+  --error: #a8261f;
+
+  /* Tipografia — grazie morbide per i titoli, senza grazie per il testo */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Scala tipografica — rapporto 1.25 (equilibrata) verso l'alto dalla base;
+     sotto la base due soli passi per etichette e note */
+  --text-xs: 0.8rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5625rem;
+  --text-2xl: 1.953rem;
+  --text-3xl: 2.441rem;
+  --text-4xl: 3.052rem;
+
+  /* Spaziature — base 4px */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Raggi — morbidi come la curva degli specchi, mai tondi "da app" */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1.125rem;
+  --radius-full: 9999px;
+
+  /* Griglia */
+  --container: 72rem;
+  --gutter: 1rem;
+
+  /* Movimento — discreto */
+  --dur-fast: 160ms;
+  --dur-base: 320ms;
+  --dur-slow: 480ms;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
