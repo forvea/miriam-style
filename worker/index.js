@@ -2,9 +2,9 @@
 // il proxy di vite.config.ts) e serve tutto il resto dagli asset statici di ./dist.
 // MOTIVO: la chiave X-Api-Key si aggiunge qui, lato server; il browser non la vede mai.
 const API_PREFIX = '/api/booking'
-const BACKEND_URL = 'https://backend-production-70c0.up.railway.app/api/v1'
+const BACKEND_URL = 'https://backend-production-70c0.up.railway.app'
 
-/** /api/booking/services?x → https://…/api/v1/services?x, stesso metodo, intestazioni e corpo */
+/** /api/booking/api/v1/services?x → https://…/api/v1/services?x, stesso metodo, intestazioni e corpo */
 function proxyToBackend(request, env, url) {
   const target = `${BACKEND_URL}${url.pathname.slice(API_PREFIX.length)}${url.search}`
   const proxied = new Request(target, request)
