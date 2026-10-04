@@ -1,0 +1,18 @@
+// Sito di TEST su Cloudflare Workers. Build: "npm run build" (output in ./dist).
+// MOTIVO: questa configurazione esiste perché Cloudflare non generi la sua con
+// @cloudflare/vite-plugin, che cambia l'output SSR e rompe scripts/prerender.mjs.
+{
+  "name": "miriam-style",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // /prenota serve prenota/index.html; /prenota/ reindirizza a /prenota
+    "html_handling": "drop-trailing-slash",
+    // Il Worker passa per ogni richiesta: proxy /api/booking e X-Robots-Tag su tutto
+    "run_worker_first": true
+  },
+  "observability": { "enabled": true }
+  // Secret richiesto: BOOKING_API_KEY (in locale da .dev.vars, escluso da git)
+}

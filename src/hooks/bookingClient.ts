@@ -4,7 +4,9 @@
 // la aggiunge il proxy lato server: nel codice del browser non c'è mai.
 import type { ApiErrorBody, ApiFailure, ApiResult } from '@/types'
 
-const BASE_URL = import.meta.env.VITE_BOOKING_API_URL
+// MOTIVO: .env non è nel repository, quindi la build su Cloudflare non ha la
+// variabile; il percorso è sempre lo stesso, servito dal Worker (worker/index.js)
+const BASE_URL = import.meta.env.VITE_BOOKING_API_URL || '/api/booking'
 const TIMEOUT_MS = 8000
 const SERVER_ERROR = 500
 
